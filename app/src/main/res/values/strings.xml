@@ -2,7 +2,7 @@
     <string name="app_name">My Application</string>
     <string name="btn_text">Выбрать фон</string>
     <string name="message">Выбрать фон</string>
-    <string name="red">Красный</string>
-    <string name="green">Зеленый</string>
-    <string name="yellow">Желтый</string>
+    <string name="redStr">Красный</string>
+    <string name="greenStr">Зеленый</string>
+    <string name="yellowStr">Желтый</string>
 </resources>

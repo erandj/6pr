@@ -18,36 +18,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
     public ConstraintLayout constraintLayout;
     Context context;
 
-    final CharSequence[] items = {getText(R.string.red), getText(R.string.green), getText(R.string.yellow)};
-
-    @Override
-    public void onClick(View view) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.message);
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-
-        builder.setItems(items, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                switch (i) {
-                    case 0:
-                        constraintLayout.setBackgroundResource(R.color.red);
-                        Toast.makeText(context, R.string.red, Toast.LENGTH_LONG).show();
-                        break;
-                    case 1:
-                        constraintLayout.setBackgroundResource(R.color.green);
-                        Toast.makeText(context, R.string.green, Toast.LENGTH_LONG).show();
-                        break;
-                    case 2:
-                        constraintLayout.setBackgroundResource(R.color.yellow);
-                        Toast.makeText(context, R.string.yellow, Toast.LENGTH_LONG).show();
-                        break;
-                }
-            }
-        });
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,5 +30,34 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
         bgButton.setOnClickListener(this);
     }
 
+    @Override
+    public void onClick(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.message);
+        final CharSequence[] items = {getText(R.string.redStr), getText(R.string.greenStr), getText(R.string.yellowStr)};
 
+        builder.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                switch (i) {
+                    case 0:
+                        constraintLayout.setBackgroundResource(R.color.red);
+                        Toast.makeText(context, R.string.redStr, Toast.LENGTH_LONG).show();
+                        break;
+                    case 1:
+                        constraintLayout.setBackgroundResource(R.color.green);
+                        Toast.makeText(context, R.string.greenStr, Toast.LENGTH_LONG).show();
+                        break;
+                    case 2:
+                        constraintLayout.setBackgroundResource(R.color.yellow);
+                        Toast.makeText(context, R.string.yellowStr, Toast.LENGTH_LONG).show();
+                        break;
+                }
+            }
+        });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
 }
